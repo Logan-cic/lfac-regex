@@ -36,8 +36,8 @@ def mascara_cpf(cpf: str) -> bool:
 
 def mascara_telefone(telefone: str) -> bool:
     
-    # match = re.search(r'(\((?=.{3}\))(?=.{10}-)?)?[0-9]{2} 9[0-9]{4}[0-9]{4}', telefone)
-    match = re.search(r'(\((?=.{3}\)))?[0-9]{2} 9[0-9]{4}[0-9]{4}', telefone)
+    # match = re.search(r'(\((?=.{2}\))(?=.{10}-))?[0-9]{2}\)? 9[0-9]{4}[0-9]{4}', telefone)
+    match = re.search(r'(\([0-9]{2}\) 9[0-9]{4}-?[0-9]{4})|([0-9]{2} 9[0-9]{8})', telefone)
     
     return valida_regex(match, telefone)
     
@@ -122,5 +122,6 @@ if __name__ == "__main__":
     print(mascara_telefone("99 99999-9999"))
     print(mascara_telefone("(94)95555-5555"))
     
-    print(re.search(r'(\((?=.{2}\)))?[0-9]*', "(12)123123123"))
+    print(re.search(r'\((?=.{6}\))[a-z]*\)?', "(asdasd)"))
+
     pass
