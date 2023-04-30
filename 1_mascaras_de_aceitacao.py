@@ -41,7 +41,11 @@ def mascara_telefone(telefone: str) -> bool:
     
     return valida_regex(match, telefone)
     
+def mascara_data_hora(data_hora: str) -> bool:
     
+    match = re.search(r'[0-9]{2}/[0-9]{2}/[0-9]{4} ([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]', data_hora)
+    
+    return valida_regex(match, data_hora)
 
 
 if __name__ == "__main__":
@@ -112,16 +116,25 @@ if __name__ == "__main__":
     # print(mascara_cpf("123.456.789-0"))
     # print(mascara_cpf("11.111.11-11"))
     
-    # testes telefone
+    # # testes telefone
     
-    print(mascara_telefone("(91) 99999-9999"))
-    print(mascara_telefone("(91) 999999999"))
-    print(mascara_telefone("91 999999999"))
+    # print(mascara_telefone("(91) 99999-9999"))
+    # print(mascara_telefone("(91) 999999999"))
+    # print(mascara_telefone("91 999999999"))
     
-    print(mascara_telefone("(91) 59999-9999"))
-    print(mascara_telefone("99 99999-9999"))
-    print(mascara_telefone("(94)95555-5555"))
+    # print(mascara_telefone("(91) 59999-9999"))
+    # print(mascara_telefone("99 99999-9999"))
+    # print(mascara_telefone("(94)95555-5555"))
     
-    print(re.search(r'\((?=.{6}\))[a-z]*\)?', "(asdasd)"))
+    # print(re.search(r'\((?=.{6}\))[a-z]*\)?', "(asdasd)"))
+    
+    # testes data e hora
+    
+    print(mascara_data_hora("31/08/2019 20:14:55"))
+    print(mascara_data_hora("99/99/9999 23:59:59"))
+    
+    print(mascara_data_hora("99/99/9999 3:9:9,"))
+    print(mascara_data_hora("9/9/99 99:99:99"))
+    print(mascara_data_hora("99/99/999903:09:09"))
 
     pass
