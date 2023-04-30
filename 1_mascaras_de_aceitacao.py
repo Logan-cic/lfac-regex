@@ -41,6 +41,12 @@ def mascara_telefone(telefone: str) -> bool:
     
     return valida_regex(match, telefone)
 
+def mascara_data_hora(data_hora: str) -> bool:
+
+    match = re.search(r'[0-9]{2}/[0-9]{2}/[0-9]{4} ([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]', data_hora)
+
+    return valida_regex(match, data_hora)
+
 def mascara_num_decimal(num: str) -> bool:
     match = re.search(r'^[-+]?[0-9]{1,2}(\.[0-9]+|[0-9]+\.)?(e[-+]?[0-9]+)?$', num)
     
@@ -128,10 +134,17 @@ if __name__ == "__main__":
     
     # print(re.search(r'\((?=.{6}\))[a-z]*\)?', "(asdasd)"))
     
-    #teste para mascara de numeros decimais
-    lista = ['-25.467', '1', '-1', '+1', '64.2', '1.', '.2', '+64,2']
+    print(mascara_data_hora("31/08/2019 20:14:55"))
+    print(mascara_data_hora("99/99/9999 23:59:59"))
+
+    print(mascara_data_hora("99/99/9999 3:9:9,"))
+    print(mascara_data_hora("9/9/99 99:99:99"))
+    print(mascara_data_hora("99/99/999903:09:09"))
     
-    for i in lista:
-        print(mascara_num_decimal(i))
+    #teste para mascara de numeros decimais
+    # lista = ['-25.467', '1', '-1', '+1', '64.2', '1.', '.2', '+64,2']
+    
+    # for i in lista:
+    #     print(mascara_num_decimal(i))
         
     pass
