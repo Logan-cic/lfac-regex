@@ -41,21 +41,97 @@ def mascara_telefone(telefone: str) -> bool:
     
     return valida_regex(match, telefone)
 
-# def mascara_data_horario(data_horario: str) -> bool:
-#     match = re.search(r'^(0[1-9]|[12]\d|3[01])/(0[1-9]|1[0-2])/\d{4} ([01]\d|2[0-3]):[0-5]\d:[0-5]\d', data_horario)
-#     return valida_regex(match, data_horario)
-    
-def mascara_num_real(num) -> bool:
-    match = re.search(r'^[-+]?[0-9]{1,2}(\.[0-9]+|[0-9]+\.)?(e[-+]?[0-9]+)?$'
-, num)
+def mascara_num_decimal(num: str) -> bool:
+    match = re.search(r'^[-+]?[0-9]{1,2}(\.[0-9]+|[0-9]+\.)?(e[-+]?[0-9]+)?$', num)
     
     return valida_regex(match, num)
+    
+    
+
 
 if __name__ == "__main__":
     
-    # teste num decimal
-    lista = ["-25.467", "1", "-1","+1", "64.2","1."," .2","+64,2"]
-    for i in lista:
-        print(mascara_num_real(i))
+    # nome_teste1 = "Victor Goncalves Oliveira"   #True
+    # nome_teste2 = "victor Goncalves Oliveira"   #False
+    # nome_teste3 = "Victor Oliveira"             #True
+    # nome_teste4 = "Victor goncalves Oliveira"   #False
+    # nome_teste5 = "Victor oliveira"             #False
+    # nome_teste6 = "Victor OliveirA"             #False
     
+    # print(mascara_nome(nome_teste1))
+    # print(mascara_nome(nome_teste2))
+    # print(mascara_nome(nome_teste3))
+    # print(mascara_nome(nome_teste4))
+    # print(mascara_nome(nome_teste5))
+    # print(mascara_nome(nome_teste6))
+    
+    # print("\n\n")
+    
+    
+    # print(mascara_nome("Ada Lovelace"))
+    # print(mascara_nome("Alan Turing"))
+    # print(mascara_nome("Stephen Cole Kleene"))
+    
+    # print(mascara_nome("1Alan"))
+    # print(mascara_nome("Alan"))
+    # print(mascara_nome("A1an"))
+    # print(mascara_nome("A1an Turing"))
+    # print(mascara_nome("Alan turing"))
+    
+    
+    # #testes email
+    
+    # print(mascara_email("a@a.br"))
+    # print(mascara_email("divulga@ufpa.br"))
+    # print(mascara_email("a@a.com.br"))
+    
+    # print(mascara_email("@"))
+    # print(mascara_email("a@.br"))
+    # print(mascara_email("@a.br"))
+    # print(mascara_email("T@teste.br"))
+    # print(mascara_email("a@A.com.br"))    
+    
+    
+    # #testes senha
+    
+    # print(mascara_senha("518R2r5e"))
+    # print(mascara_senha("F123456A"))
+    # print(mascara_senha("1234567T"))
+    # print(mascara_senha("ropsSoq0"))
+    
+    # print(mascara_senha("F1234567A"))
+    # print(mascara_senha("abcdefgH"))
+    # print(mascara_senha("1234567HI"))
+    
+    # print(mascara_senha("asdfvc2Z"))
+    # print(mascara_senha("7Xasas2A"))
+    # print(mascara_senha("2asdasdZ"))
+    # print(mascara_senha("aaaaaaaa"))
+    
+    # # testes cpf
+    
+    # print(mascara_cpf("123.456.789-09"))
+    # print(mascara_cpf("000.000.000-00"))
+    
+    # print(mascara_cpf("123.456.789-0"))
+    # print(mascara_cpf("11.111.11-11"))
+    
+    # testes telefone
+    
+    # print(mascara_telefone("(91) 99999-9999"))
+    # print(mascara_telefone("(91) 999999999"))
+    # print(mascara_telefone("91 999999999"))
+    
+    # print(mascara_telefone("(91) 59999-9999"))
+    # print(mascara_telefone("99 99999-9999"))
+    # print(mascara_telefone("(94)95555-5555"))
+    
+    # print(re.search(r'\((?=.{6}\))[a-z]*\)?', "(asdasd)"))
+    
+    #teste para mascara de numeros decimais
+    lista = ['-25.467', '1', '-1', '+1', '64.2', '1.', '.2', '+64,2']
+    
+    for i in lista:
+        print(mascara_num_decimal(i))
+        
     pass
