@@ -141,10 +141,10 @@ if __name__ == "__main__":
     print(mascara_data_hora("9/9/99 99:99:99"))
     print(mascara_data_hora("99/99/999903:09:09"))
     
-    #teste para mascara de numeros decimais
-    # lista = ['-25.467', '1', '-1', '+1', '64.2', '1.', '.2', '+64,2']
+    # teste para mascara de numeros decimais
+    lista = ['-25.467', '1', '-1', '+1', '64.2', '1.', '.2', '+64,2']
     
-    # for i in lista:
-    #     print(mascara_num_decimal(i))
+    for i in lista:
+        print(mascara_num_decimal(i))
         
     pass
