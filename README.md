@@ -19,4 +19,4 @@ Exemplos de cadeias rejeitadas:
 - A1an Turing
 - Alan turing
 
-![Teste para aceitação ou rejeição da cadeia](images/validacao de nomes.png)
+(lfac/images/valiadação de nomes.png)
