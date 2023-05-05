@@ -56,96 +56,6 @@ def mascara_num_decimal(num: str) -> bool:
 
 
 if __name__ == "__main__":
-    #TESTE NOME
-    # nome_teste1 = "Victor Goncalves Oliveira"   #True
-    # nome_teste2 = "victor Goncalves Oliveira"   #False
-    # nome_teste3 = "Victor Oliveira"             #True
-    # nome_teste4 = "Victor goncalves Oliveira"   #False
-    # nome_teste5 = "Victor oliveira"             #False
-    # nome_teste6 = "Victor OliveirA"             #False
-    
-    # print(mascara_nome(nome_teste1))
-    # print(mascara_nome(nome_teste2))
-    # print(mascara_nome(nome_teste3))
-    # print(mascara_nome(nome_teste4))
-    # print(mascara_nome(nome_teste5))
-    # print(mascara_nome(nome_teste6))
-    
-    # print("\n\n")
-    
-    
-    # print(mascara_nome("Ada Lovelace"))
-    # print(mascara_nome("Alan Turing"))
-    # print(mascara_nome("Stephen Cole Kleene"))
-    
-    # print(mascara_nome("1Alan"))
-    # print(mascara_nome("Alan"))
-    # print(mascara_nome("A1an"))
-    # print(mascara_nome("A1an Turing"))
-    # print(mascara_nome("Alan turing"))
-    
-    
-    # #testes email
-    
-    # print(mascara_email("a@a.br"))
-    # print(mascara_email("divulga@ufpa.br"))
-    # print(mascara_email("a@a.com.br"))
-    
-    # print(mascara_email("@"))
-    # print(mascara_email("a@.br"))
-    # print(mascara_email("@a.br"))
-    # print(mascara_email("T@teste.br"))
-    # print(mascara_email("a@A.com.br"))    
-    
-    
-    # #testes senha
-    
-    # print(mascara_senha("518R2r5e"))
-    # print(mascara_senha("F123456A"))
-    # print(mascara_senha("1234567T"))
-    # print(mascara_senha("ropsSoq0"))
-    
-    # print(mascara_senha("F1234567A"))
-    # print(mascara_senha("abcdefgH"))
-    # print(mascara_senha("1234567HI"))
-    
-    # print(mascara_senha("asdfvc2Z"))
-    # print(mascara_senha("7Xasas2A"))
-    # print(mascara_senha("2asdasdZ"))
-    # print(mascara_senha("aaaaaaaa"))
-    
-    # # testes cpf
-    
-    # print(mascara_cpf("123.456.789-09"))
-    # print(mascara_cpf("000.000.000-00"))
-    
-    # print(mascara_cpf("123.456.789-0"))
-    # print(mascara_cpf("11.111.11-11"))
-    
-    # # testes telefone
-    
-    # print(mascara_telefone("(91) 99999-9999"))
-    # print(mascara_telefone("(91) 999999999"))
-    # print(mascara_telefone("91 999999999"))
-    
-    # print(mascara_telefone("(91) 59999-9999"))
-    # print(mascara_telefone("99 99999-9999"))
-    # print(mascara_telefone("(94)95555-5555"))
-    
-    # print(re.search(r'\((?=.{6}\))[a-z]*\)?', "(asdasd)"))
-    
-    # print(mascara_data_hora("31/08/2019 20:14:55"))
-    # print(mascara_data_hora("99/99/9999 23:59:59"))
-
-    # print(mascara_data_hora("99/99/9999 3:9:9,"))
-    # print(mascara_data_hora("9/9/99 99:99:99"))
-    # print(mascara_data_hora("99/99/999903:09:09"))
-    
-    # # teste para mascara de numeros decimais
-    # lista = [' 123.456.789-0', '111.111.11-11']
-    
-    # for i in lista:
-    #     print(mascara_cpf(i))
     
     nomes = [
     ["Ada Lovelace", True],
@@ -157,15 +67,7 @@ if __name__ == "__main__":
     ["A1an Turing", False],
     ["Alan turing", False],
     ]
-
-        
-    # Realiza os testes e exibe os resultados na tabela
-    print("| Função       | Cadeia de entrada                | Saída |")
-    print("|--------------|----------------------------------|-------|")
-    for cadeia, saida_esperada in nomes:
-        print(f"| mascara_nome | {cadeia:<32} | {mascara_nome(cadeia)} |")
     
-    print()
     emails = [
     ["a@a.br", True], 
     ["divulga@ufpa.br", True],
@@ -176,13 +78,7 @@ if __name__ == "__main__":
     ["T@teste.br", False],
     ["a@A.com.br", False],
     ]
-
-    print("|--------------|-------------------------------------------")
-    print("| Função       | Cadeia de entrada                | Saída |")
-    for cadeia, saida_esperada in emails:
-        print(f"| mascara_email | {cadeia:<32} | {mascara_email(cadeia)} |")
     
-    print()
     senha = [
     ["518R2r5e", True],
     ["F123456A", True],
@@ -192,13 +88,7 @@ if __name__ == "__main__":
     ["abcdefgH", False],
     ["1234567HI", False],
     ]
-
-    print("|--------------|-------------------------------------------")
-    print("| Função       | Cadeia de entrada                | Saída |")
-    for cadeia, saida_esperada in senha :
-        print(f"| mascara_senha | {cadeia:<32} | {mascara_senha(cadeia)} |")
-    
-    print()
+   
     cpf = [
     ["123.456.789-09", True],
     ["000.000.000-00", True],
@@ -206,12 +96,6 @@ if __name__ == "__main__":
     ["111.111.11-11", False],
     ]
     
-    print("|--------------|-------------------------------------------")
-    print("| Função       | Cadeia de entrada                | Saída |")
-    for cadeia, saida_esperada in cpf :
-        print(f"| mascara_senha | {cadeia:<32} | {mascara_cpf(cadeia)} |")
-        
-    print()
 
     telefone = [
     ["(91) 99999-9999", True],
@@ -222,13 +106,6 @@ if __name__ == "__main__":
     ["(94)95555-5555", True],
     ]
     
-    print("|--------------|-------------------------------------------")
-    print("| Função       | Cadeia de entrada                | Saída |")
-    for cadeia, saida_esperada in telefone :
-        print(f"| mascara_senha | {cadeia:<32} | {mascara_telefone(cadeia)} |")
-        
-    print()
-    
     data_e_hora = [
     ["31/08/2019 20:14:55", True],
     ["99/99/9999 23:59:59", True],
@@ -237,14 +114,7 @@ if __name__ == "__main__":
     ["99/99/999903:09:09", False],
     ]
     
-    print("|--------------|-------------------------------------------")
-    print("| Função       | Cadeia de entrada                | Saída |")
-    for cadeia, saida_esperada in data_e_hora :
-        print(f"| mascara_senha | {cadeia:<32} | {mascara_data_hora(cadeia)} |")
-        
-    print()
-    
-    numeros = [
+    numeros_decimais = [
     ["-25.467", True],
     ["1", True],
     ["-1", True],
@@ -255,14 +125,15 @@ if __name__ == "__main__":
     ["+64,2", False],
     ]
     
+    # Inisira a lista a ser testada após o "in" do for.
+    # Dentro do print chame a função que validara ou não a cadeia dentro da lista.
+    # A tabale retorna True para uma cadeia aceita e False para a cadeia rejeitada.
+    
     print("|--------------|-------------------------------------------")
     print("| Função       | Cadeia de entrada                | Saída |")
-    for cadeia, saida_esperada in numeros :
+    for cadeia, saida_esperada in numeros_decimais:
         print(f"| mascara_senha | {cadeia:<32} | {mascara_num_decimal(cadeia)} |")
         
     print()
-
-
-
 
     pass
