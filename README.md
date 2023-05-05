@@ -21,3 +21,21 @@ Exemplos de cadeias rejeitadas:
 
 ![Validação de nomes](lfac/images/validação_nomes.png)
 
+# Validação de E-mails
+
+O texto a seguir descreve as regras de validação para e-mails.
+
+### Aceitos
+- a@a.br
+- divulga@ufpa.br
+- a@a.com.br
+
+### Rejeitados
+- @
+- a@.br
+- @a.br
+- T@teste.br
+- a@A.com.br
+
+![Validação de emails](lfac/images/validação_email.png)
+
